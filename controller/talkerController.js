@@ -11,10 +11,12 @@ const deleteTalker = require('../middlewares/deleteTalker');
 const editTalker = require('../middlewares/editTalker');
 const getAllTalkers = require('../middlewares/getAllTalkers');
 const getTalkerById = require('../middlewares/getTalkerById');
+const searchTalker = require('../middlewares/searchTalker');
 
 const router = express.Router();
 
 router.get('/', getAllTalkers);
+router.get('/search', tokenAuth, searchTalker);
 router.get('/:id', getTalkerById);
 router.post('/', tokenAuth, nameAuth, ageAuth, talkObjAuth, watchedAtAuth, rateAuth, createTalker);
 router.put('/:id', tokenAuth, nameAuth, ageAuth, talkObjAuth, watchedAtAuth, rateAuth, editTalker);
