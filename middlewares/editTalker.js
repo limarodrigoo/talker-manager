@@ -1,4 +1,4 @@
-const fs = require('fs').promise;
+const fs = require('fs').promises;
 
 const editTalker = async (req, res) => {
   const { id } = req.params;

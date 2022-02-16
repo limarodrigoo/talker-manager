@@ -68,7 +68,7 @@ const watchedAtAuth = (req, res, next) => {
 const rateAuth = (req, res, next) => {
   const { rate } = req.body.talk;
 
-  if (!rate) {
+  if (rate === undefined) {
     return res.status(400)
       .json({ message: 
         'O campo "talk" é obrigatório e "watchedAt" e "rate" não podem ser vazios' });
